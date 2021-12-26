@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/gouravkhunger/jekyll-hostname"
   spec.license = "MIT"
 
-  s.required_ruby_version = ">= 2.4.0"
+  spec.required_ruby_version = ">= 2.4.0"
 
   spec.add_dependency "jekyll"
   spec.add_dependency "uri"
