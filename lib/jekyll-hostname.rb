@@ -2,7 +2,7 @@ require 'uri'
 
 module Jekyll
     module JekyllHostname
-      def host(input)
+      def hostname(input)
         URI.parse(input).host
       end
     end
