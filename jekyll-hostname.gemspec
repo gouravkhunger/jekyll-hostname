@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "jekyll-hostname"
-  spec.version = "1.0.6"
+  spec.version = "1.0.7"
   spec.authors = ["Gourav Khunger"]
   spec.email = ["gouravkhunger18@gmail.com"]
 
