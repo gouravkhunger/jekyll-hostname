@@ -1,43 +1,49 @@
 # Jekyll::Hostname
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jekyll/hostname`. To experiment with that code, run `bin/console` for an interactive prompt.
+A jekyll plugin to grab the hostnames from a URL, meaning
 
-TODO: Delete this and the text above, and describe your gem
+- `https://google.com` becomes `google.com`
+- `http://github.com` becomes `github.com`
+- `https://github.com/gouravkhunger/jekyll-hostname` becomes `github.com`
+
+This gem was originally authored to be used as a custom plugin for the [static site](https://github.com/genicsblog/genicsblog.github.io) of [genicsblog.com](https://genicsblog.com)
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile inside the `jekyll_plugins` group:
 
 ```ruby
-gem 'jekyll-hostname'
+group :jekyll_plugins do
+    # other gems
+    gem "jekyll-hostname"
+end
+```
+
+Then, enable the plugin by adding it to the `plugins` section in the `_config.yml` file:
+
+```yaml
+plugins:
+    # - other plugins
+    - jekyll-hostname
 ```
 
 And then execute:
 
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install jekyll-hostname
+```shell
+bundle install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+This plugin is essentially a filter and works on any [valid URL string](https://en.wikipedia.org/wiki/URL#Syntax) provided inside a liquid tag. Use it as below:
 
-## Development
+```liquid
+{% assign host = site.url | hostname %}
+{% assign domain = post.source | hostname %}
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jekyll-hostname. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/jekyll-hostname/blob/main/CODE_OF_CONDUCT.md).
+The `hostname` filter extracts the root domain from the given url string(here `site.url` or `page.source`)
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Jekyll::Hostname project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/jekyll-hostname/blob/main/CODE_OF_CONDUCT.md).
