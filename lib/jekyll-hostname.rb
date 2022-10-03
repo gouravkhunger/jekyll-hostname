@@ -1,4 +1,5 @@
 require "uri"
+require "jekyll"
 
 module Jekyll
     module JekyllHostname
