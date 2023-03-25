@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hostname Plugin Example | This is an example Jekyll site to showcase how to use the jekyll-hostname liquid filter to extract the hostname string from a valid URL.</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Hostname Plugin Example" />
+<meta name="author" content="Gourav Khunger" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is an example Jekyll site to showcase how to use the jekyll-hostname liquid filter to extract the hostname string from a valid URL." />
+<meta property="og:description" content="This is an example Jekyll site to showcase how to use the jekyll-hostname liquid filter to extract the hostname string from a valid URL." />
+<link rel="canonical" href="https://hostname.gouravkhunger.me/" />
+<meta property="og:url" content="https://hostname.gouravkhunger.me/" />
+<meta property="og:site_name" content="Hostname Plugin Example" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hostname Plugin Example" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Gourav Khunger"},"description":"This is an example Jekyll site to showcase how to use the jekyll-hostname liquid filter to extract the hostname string from a valid URL.","headline":"Hostname Plugin Example","name":"Hostname Plugin Example","url":"https://hostname.gouravkhunger.me/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://hostname.gouravkhunger.me/feed.xml" title="Hostname Plugin Example" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Hostname Plugin Example</a></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="jekyllhostname">Jekyll::Hostname</h1>
+
+<p>A jekyll plugin to grab the hostnames from a URL, meaning</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">https://google.com</code> becomes <code class="language-plaintext highlighter-rouge">google.com</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://github.com</code> becomes <code class="language-plaintext highlighter-rouge">github.com</code></li>
+  <li><code class="language-plaintext highlighter-rouge">https://github.com/gouravkhunger/jekyll-hostname</code> becomes <code class="language-plaintext highlighter-rouge">github.com</code></li>
+</ul>
+
+<p>This gem was originally authored to be used as a custom plugin for the <a href="https://github.com/genicsblog/genicsblog.github.io">static site</a> of <a href="https://genicsblog.com">genicsblog.com</a></p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this line to your application’s Gemfile inside the <code class="language-plaintext highlighter-rouge">jekyll_plugins</code> group:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+    <span class="c1"># other gems</span>
+    <span class="n">gem</span> <span class="s2">"jekyll-hostname"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Then, enable the plugin by adding it to the <code class="language-plaintext highlighter-rouge">plugins</code> section in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">plugins</span><span class="pi">:</span>
+    <span class="c1"># - other plugins</span>
+    <span class="pi">-</span> <span class="s">jekyll-hostname</span>
+</code></pre></div></div>
+
+<p>And then execute:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>This plugin is essentially a filter and works on any <a href="https://en.wikipedia.org/wiki/URL#Syntax">valid URL string</a> provided inside a liquid tag. Use it as below:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">source</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">hostname</code> filter extracts the root domain from the given url string(here <code class="language-plaintext highlighter-rouge">site.url</code> or <code class="language-plaintext highlighter-rouge">page.source</code>)</p>
+
+<p>For example, for the following code:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://genicsblog.com/author/gouravkhunger/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>the output for <code class="language-plaintext highlighter-rouge">{{ domain }}</code> and <code class="language-plaintext highlighter-rouge">{{ host }}</code> will be:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hostname.gouravkhunger.me <span class="c"># {{ domain }}</span>
+genicsblog.com <span class="c"># {{ host }}</span>
+</code></pre></div></div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name"><a href="https://gouravkhunger.me" target="_blank">Gourav Khunger</a></li>
+          <li>gouravkhunger18[at]gmail.com</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>This is an example Jekyll site to showcase how to use the jekyll-hostname liquid filter to extract the hostname string from a valid URL.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://link.gouravkhunger.me/github" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://link.gouravkhunger.me/youtube" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://link.gouravkhunger.me/twitter" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://link.gouravkhunger.me/stackoverflow" target="_blank" title="stackoverflow">
+    <svg class="svg-icon grey">
+      <use xlink:href="/assets/minima-social-icons.svg#stackoverflow"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
