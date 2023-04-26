@@ -15,8 +15,8 @@ class JekyllHostnameTest
       assert_equal hostname("https://github.com"), "github.com"
     end
 
-    it "https://gouravkhunger.me/project/jekyll-hostname should become gouravkhunger.me" do
-      assert_equal hostname("https://gouravkhunger.me/project/jekyll-hostname"), "gouravkhunger.me"
+    it "https://gourav.sh/project/jekyll-hostname should become gourav.sh" do
+      assert_equal hostname("https://gourav.sh/project/jekyll-hostname"), "gourav.sh"
     end
 
     it "https://example.com/some-path#anchor?a=1&b=2 should become example.com" do

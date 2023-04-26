@@ -2,7 +2,7 @@ This is an example Jekyll site to showcase how to use the `jekyll-hostname` liqu
 
 ### Set up
 
-You can preview this example [here](https://hostname.gouravkhunger.me) or set it up locally:
+You can preview this example [here](https://hostname.gourav.sh) or set it up locally:
 
 ```
 git clone https://github.com/gouravkhunger/jekyll-hostname

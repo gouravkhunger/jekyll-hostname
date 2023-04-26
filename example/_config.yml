@@ -1,7 +1,7 @@
 title: Hostname Plugin Example
 description: >-
   This is an example Jekyll site to showcase how to use the jekyll-hostname liquid filter to extract the hostname string from a valid URL.
-url: "https://hostname.gouravkhunger.me"
+url: "https://hostname.gourav.sh"
 baseurl: ""
 
 author:
@@ -12,10 +12,10 @@ theme: minima
 
 minima:
   social_links:
-    - { platform: github,  user_url: "https://link.gouravkhunger.me/github" }
-    - { platform: youtube, user_url: "https://link.gouravkhunger.me/youtube" }
-    - { platform: twitter, user_url: "https://link.gouravkhunger.me/twitter" }
-    - { platform: stackoverflow, user_url: "https://link.gouravkhunger.me/stackoverflow" }
+    - { platform: github, user_url: "https://l.gourav.sh/github" }
+    - { platform: youtube, user_url: "https://l.gourav.sh/youtube" }
+    - { platform: twitter, user_url: "https://l.gourav.sh/twitter" }
+    - { platform: stackoverflow, user_url: "https://l.gourav.sh/stackoverflow" }
 
 plugins:
   - jekyll-hostname
