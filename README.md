@@ -1,5 +1,10 @@
 # Jekyll::Hostname
 
+[![Gem Version](https://img.shields.io/gem/v/jekyll-hostname)][ruby-gems]
+[![Gem Total Downloads](https://img.shields.io/gem/dt/jekyll-hostname)][ruby-gems]
+
+[ruby-gems]: https://rubygems.org/gems/jekyll-hostname
+
 A jekyll plugin to grab the hostnames from a URL, meaning
 
 - `https://google.com` becomes `google.com`
