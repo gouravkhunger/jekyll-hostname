@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Hostname Plugin Example | This is an example Jekyll site to showcase how to use the jekyll-hostname liquid filter to extract the hostname string from a valid URL.</title>
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Hostname Plugin Example" />
 <meta name="author" content="Gourav Khunger" />
 <meta property="og:locale" content="en_US" />
@@ -28,6 +28,9 @@
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <h1 id="jekyllhostname">Jekyll::Hostname</h1>
+
+<p><a href="https://rubygems.org/gems/jekyll-hostname"><img src="https://img.shields.io/gem/v/jekyll-hostname" alt="Gem Version" /></a>
+<a href="https://rubygems.org/gems/jekyll-hostname"><img src="https://img.shields.io/gem/dt/jekyll-hostname" alt="Gem Total Downloads" /></a></p>
 
 <p>A jekyll plugin to grab the hostnames from a URL, meaning</p>
 
@@ -65,16 +68,16 @@
 
 <p>This plugin is essentially a filter and works on any <a href="https://en.wikipedia.org/wiki/URL#Syntax">valid URL string</a> provided inside a liquid tag. Use it as below:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">source</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">source</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>The <code class="language-plaintext highlighter-rouge">hostname</code> filter extracts the root domain from the given url string(here <code class="language-plaintext highlighter-rouge">site.url</code> or <code class="language-plaintext highlighter-rouge">page.source</code>)</p>
 
 <p>For example, for the following code:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://genicsblog.com/author/gouravkhunger/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="p">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://genicsblog.com/author/gouravkhunger/"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">hostname</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div></div>
 
 <p>the output for <code class="language-plaintext highlighter-rouge">{{ domain }}</code> and <code class="language-plaintext highlighter-rouge">{{ host }}</code> will be:</p>
