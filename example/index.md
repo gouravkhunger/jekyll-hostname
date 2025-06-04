@@ -17,6 +17,14 @@ A jekyll plugin to grab the hostnames from a URL, meaning
 
 This gem was originally authored to be used as a custom plugin for the [static site](https://github.com/genicsblog/genicsblog.github.io) of [genicsblog.com](https://genicsblog.com)
 
+## Used by
+
+<a href="https://github.com/gouravkhunger/jekyll-hostname/network/dependents">
+  <img src="https://dependents.info/gouravkhunger/jekyll-hostname/image.svg" />
+</a>
+
+Made with [dependents.info](https://dependents.info).
+
 ## Installation
 
 Add this line to your application's Gemfile inside the `jekyll_plugins` group:

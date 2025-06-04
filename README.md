@@ -49,6 +49,14 @@ This plugin is essentially a filter and works on any [valid URL string](https://
 
 The `hostname` filter extracts the root domain from the given url string(here `site.url` or `page.source`)
 
+## Used by
+
+<a href="https://github.com/gouravkhunger/jekyll-hostname/network/dependents">
+  <img src="https://dependents.info/gouravkhunger/jekyll-hostname/image.svg" />
+</a>
+
+Made with [dependents.info](https://dependents.info).
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
