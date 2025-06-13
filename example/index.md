@@ -6,8 +6,10 @@ layout: base
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-hostname)][ruby-gems]
 [![Gem Total Downloads](https://img.shields.io/gem/dt/jekyll-hostname)][ruby-gems]
+[![Gem Total Dependents](https://dependents.info/gouravkhunger/jekyll-hostname/badge)][dependents-info]
 
 [ruby-gems]: https://rubygems.org/gems/jekyll-hostname
+[dependents-info]: https://dependents.info/gouravkhunger/jekyll-hostname
 
 A jekyll plugin to grab the hostnames from a URL, meaning
 
@@ -19,11 +21,9 @@ This gem was originally authored to be used as a custom plugin for the [static s
 
 ## Used by
 
-<a href="https://github.com/gouravkhunger/jekyll-hostname/network/dependents">
+<a href="https://dependents.info/gouravkhunger/jekyll-hostname">
   <img src="https://dependents.info/gouravkhunger/jekyll-hostname/image.svg" />
 </a>
-
-Made with [dependents.info](https://dependents.info).
 
 ## Installation
 
